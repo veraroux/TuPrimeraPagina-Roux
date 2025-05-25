@@ -1,0 +1,48 @@
+{% extends 'AppRubros/index.html' %}
+
+
+{% block titulo %}
+<h1>Seccion Gastronomia</h1>
+{% endblock titulo %}
+
+
+
+
+{% block contenido %}
+
+<div class="mb-3 text-end">
+    <a href="{% url 'gastronomia_form' %}" class="btn btn-primary">
+        ➕ Agregar nuevo lugar gastronómico
+    </a>
+</div>
+
+
+<div class="mb-3 text-end">
+    <a href="{% url 'buscar_gastronomia' %}" class="btn btn-primary">
+        ➕ Busque un lugar gastronomico por nombre
+    </a>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Barrio</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for lugar in gastronomia  %}
+        <tr>
+            <td>{{ lugar.nombre }}</td>
+            <td>{{ lugar.barrio }}</td>
+            <td>{{ lugar.direccion }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}
+
+
+
+

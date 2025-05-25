@@ -1,0 +1,49 @@
+{% extends 'AppRubros/index.html' %}
+
+{% block titulo %}
+<h1 class="mb-5">Bienvenidos a mi página web</h1>
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Rubros disponibles</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-3 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <a href="{% url 'lista_gastronomia' %}" class="stretched-link text-decoration-none text-dark">
+                        <h5 class="card-title">🍽️ Gastronomía</h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <a href="{% url 'lista_nocturno' %}" class="stretched-link text-decoration-none text-dark">
+                        <h5 class="card-title">🌃 Nocturno</h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <a href="{% url 'lista_cultural' %}" class="stretched-link text-decoration-none text-dark">
+                        <h5 class="card-title">🎭 Cultural</h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <a href="{% url 'lista_diseño' %}" class="stretched-link text-decoration-none text-dark">
+                        <h5 class="card-title">🎨 Diseño</h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock contenido %}

@@ -1,0 +1,34 @@
+{% extends 'AppRubros/index.html' %}
+
+{% block titulo %}
+<h1>Seccion Diseño</h1>
+{% endblock titulo %}
+
+{% block contenido %}
+
+<div class="mb-3 text-end">
+    <a href="{% url 'diseño_form' %}" class="btn btn-primary">
+        ➕ Agregar una nueva casa de Diseño 
+    </a>
+</div>
+
+<table class="table table-striped">
+       <h1>Aqui puedes encontrar una lista con diferentes recomendaciones de casas de Diseño en la ciudad</h1>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Barrio</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for lugar in diseño  %}
+        <tr>
+            <td>{{ lugar.nombre }}</td>
+            <td>{{ lugar.barrio }}</td>
+            <td>{{ lugar.direccion }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}

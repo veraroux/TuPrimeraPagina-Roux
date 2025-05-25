@@ -1,0 +1,35 @@
+{% extends 'AppRubros/index.html' %}
+
+{% block titulo %}
+<h1>Seccion Nocturna</h1>
+{% endblock titulo %}
+
+{% block contenido %}
+<table class="table table-striped">
+
+<div class="mb-3 text-end">
+    <a href="{% url 'nocturno_form' %}" class="btn btn-primary">
+        ➕ Agregar nuevo lugar nocturno
+    </a>
+</div>
+
+
+       <h1>Aqui puedes encontrar una lista con diferentes recomendaciones de lugares para ir de noche </h1>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Barrio</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for lugar in nocturno  %}
+        <tr>
+            <td>{{ lugar.nombre }}</td>
+            <td>{{ lugar.barrio }}</td>
+            <td>{{ lugar.direccion }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}

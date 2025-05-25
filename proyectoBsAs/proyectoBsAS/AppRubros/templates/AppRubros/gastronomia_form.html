@@ -1,0 +1,18 @@
+{% extends 'AppRubros/index.html' %}
+
+
+
+{% block titulo %}
+<h1>Formulario para agregar un nuevo local gastronomico</h1>
+{% endblock titulo %}
+
+
+{% block contenido %}
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="Guardar">
+</form>
+{% endblock contenido %}

@@ -1,0 +1,34 @@
+{% extends 'AppRubros/index.html' %}
+
+{% block titulo %}
+<h1>Seccion Cultura</h1>
+{% endblock titulo %}
+
+{% block contenido %}
+
+<div class="mb-3 text-end">
+    <a href="{% url 'cultural_form' %}" class="btn btn-primary">
+        ➕ Agregar nuevo espacio cultural
+    </a>
+</div>
+
+<table class="table table-striped">
+       <h1>Aqui puedes encontrar una lista con diferentes recomendaciones de sitios culturales de Buenos Aires</h1>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Barrio</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for lugar in cultural  %}
+        <tr>
+            <td>{{ lugar.nombre }}</td>
+            <td>{{ lugar.barrio }}</td>
+            <td>{{ lugar.direccion }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}
