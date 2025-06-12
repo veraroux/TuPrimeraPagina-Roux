@@ -1,0 +1,15 @@
+{% extends 'AppRubros/index.html' %}
+
+{% block titulo %}
+    <h1>Actualizar Avatar</h1>
+{% endblock titulo %}
+
+{% block contenido %}
+   <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="Actualizar Avatar">
+</form>
+{% endblock contenido %}

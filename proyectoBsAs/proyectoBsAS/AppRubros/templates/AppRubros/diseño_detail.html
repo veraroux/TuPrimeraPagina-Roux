@@ -1,0 +1,35 @@
+{% extends 'AppRubros/index.html' %}
+
+{% load static %}
+{% block header_style %}
+    style="background-image: url('{% static 'assets/img/disenio.jpg' %}');
+           background-size: cover;
+           background-repeat: no-repeat;
+           background-position: center;
+           height: 400px;"
+{% endblock header_style %}
+
+
+{% block titulo %}
+<h1>Seccion Diseño</h1>
+
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="card mt-4 shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h3 class="mb-0">{{ lugar.nombre }}</h3>
+    </div>
+    <div class="card-body">
+        <p><strong>Dirección:</strong> {{ lugar.direccion }}</p>
+        <p><strong>Barrio:</strong> {{ lugar.barrio }}</p>
+        <p><strong>Fecha de publicacion:</strong> {{ lugar.fechaPublicacion }}</p>
+         <p><strong>Reseña:</strong>{{ lugar.reseña }}</p>  
+        <a href="{% url 'lista_diseño' %}" class="btn btn-secondary mt-3">⬅ Volver a la lista</a>
+        {% if lugar.foto %}
+          <p><strong>Foto del local:</strong></p>
+          <img src="{{ lugar.foto.url }}" alt="Foto del local" style="max-width: 100%; height: auto;" class="img-fluid mb-3">
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

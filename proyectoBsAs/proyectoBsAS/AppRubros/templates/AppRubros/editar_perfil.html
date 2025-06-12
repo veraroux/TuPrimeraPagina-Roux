@@ -1,0 +1,29 @@
+{% extends 'AppRubros/index.html' %}
+
+{% block titulo %}
+<h1 class="mb-4">Editar Perfil</h1>
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="container mt-4">
+
+    <!-- Formulario de perfil -->
+    <form method="post" class="mb-4">
+        {% csrf_token %}
+        <h4 class="mb-3">Datos del Perfil</h4>
+        {{ perfil_form.as_p }}
+        <button class="btn btn-success" type="submit" name="perfil_submit">Guardar Cambios</button>
+    </form>
+
+    <hr>
+
+    <!-- Formulario de contraseña -->
+    <form method="post">
+        {% csrf_token %}
+        <h4 class="mb-3">Cambiar Contraseña</h4>
+        {{ password_form.as_p }}
+        <button class="btn btn-warning" type="submit" name="password_submit">Cambiar Contraseña</button>
+    </form>
+
+</div>
+{% endblock contenido %}

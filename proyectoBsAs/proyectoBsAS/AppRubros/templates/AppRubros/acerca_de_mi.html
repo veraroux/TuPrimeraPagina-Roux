@@ -1,0 +1,37 @@
+{% extends 'AppRubros/index.html' %}
+
+{% block titulo %}
+<h1>En esta sección cuento un poco sobre mi</h1>
+{% endblock titulo %}
+
+
+{% block contenido %}
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h3 class="card-title">Vera Roux</h3>
+            <p class="white-space-pre-line fs-5 lh-base"></p>
+            <p id="intro"class="white-space-pre-line fs-5 lh-base">
+                Nací en  Buenos Aires, Argentina y tengo 19 años.<br>
+                Durante mi secundario nunca tuve un acercamiento real al mundo de la programación y desarrollo web y no fue hasta el año pasado(2024) que programé un código por primera vez en mi vida <br>
+                Estudio Ciencia de Datos en la UBA, y fue por esa razón que elegí hacer un curso de programación en Python. <br>
+            </p>
+            <p id="extra" style="display: none;" class="white-space-pre-line fs-5 lh-base">
+                Elegir la carrera que iba a seguir fue un gran desafío. Elegí Ciencia de Datos ya que, aparte de que me gustan mucho los números, sentía que es una carrera que me da libertad a futuro para hacer diferentes cosas a lo largo de mi vida <br>
+                Originalmente, la parte de programación del plan de estudios fue lo que me hizo dudar de elegirla, per luego de tener un primer acercamiento me di cuenta que me interesaba muco mas de lo que pensé. <br>
+                Python  es el lenguaje que estudiamos en el primer año de la carrera y fue por eso que elegí hacer este curso, tenía miedo de empezar la cursada y sentirme en desventaja ya que no sabía practicamente nada<br> <br>
+                Todavía estoy empezando a entender todo el mundo de la programación pero cada dia me dan más ganas de seguir aprendiendo. <br>
+                Sigo descubriendo qué partes me interesan y gustan más y por qué lados de este  nuevo mundo me gustaría seguir indagando.
+            </p>
+            <button class="btn btn-link p-0" onclick="mostrarMas()">Leer más</button>
+        </div>
+    </div>
+</div>
+
+<script>
+function mostrarMas() {
+    document.getElementById("extra").style.display = "inline";
+    event.target.style.display = "none";
+}
+</script>
+{% endblock contenido %}

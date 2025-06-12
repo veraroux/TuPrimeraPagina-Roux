@@ -1,6 +1,12 @@
 {% extends 'AppRubros/index.html' %}
 
 
+{% load static %}
+{% block header_style %}
+    style="background-image: url('{% static 'assets/img/gastronomia.jpg' %}');"
+{% endblock header_style %}
+
+
 {% block titulo %}
 <h1>Seccion Gastronomia</h1>
 {% endblock titulo %}
@@ -11,7 +17,7 @@
 {% block contenido %}
 
 <div class="mb-3 text-end">
-    <a href="{% url 'gastronomia_form' %}" class="btn btn-primary">
+    <a href="{% url 'gastronomia_form' %}" class="btn btn-success">
         ➕ Agregar nuevo lugar gastronómico
     </a>
 </div>
@@ -23,24 +29,56 @@
     </a>
 </div>
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Direccion</th>
-            <th>Barrio</th>
-        </tr>
-    </thead>
-    <tbody>
-    {% for lugar in gastronomia  %}
-        <tr>
-            <td>{{ lugar.nombre }}</td>
-            <td>{{ lugar.barrio }}</td>
-            <td>{{ lugar.direccion }}</td>
-        </tr>
-    {% endfor %}
-    </tbody>
-</table>
+</div>
+
+<h1 class="mb-4 text-center text-primary">
+Recomendaciones Gastronomicas
+</h1>
+
+
+<div class="card shadow-sm">
+    <div class="card-body p-0">
+        <table class="table table-hover table-striped mb-0">
+            <thead class="table-bordered">
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Dirección</th>
+                    <th scope="col">Barrio</th>
+                </tr>
+            </thead>
+          <tbody>
+  {% for lugar in gastronomia %}
+    <tr>
+        <td>{{ lugar.nombre }}</td>
+        <td>{{ lugar.direccion }}</td>
+        <td>{{ lugar.barrio }}</td>
+        <td>
+            <a href="{% url 'gastronomia_detail' lugar.pk %}"class="btn btn-primary btn-sm">
+ 
+                <button>🔍 Ver detalle</button>
+            </a>
+
+        <!-- Botón editar -->
+<a href="{% url 'gastronomiaUpdate' lugar.id %}" class="btn btn-primary btn-sm" title="Editar">
+    <i class="fas fa-pen"></i>
+</a>
+
+<!-- Botón eliminar -->
+<a href="{% url 'gastronomiaDelete' lugar.id %}" class="btn btn-danger btn-sm" title="Eliminar">
+    <i class="fas fa-trash"></i>
+</a>              
+        </td>
+    </tr>
+  {% empty %}
+    <tr>
+        <td colspan="4">No se ingresaron lugares aún.</td>
+    </tr>
+  {% endfor %}
+</tbody>
+        </table>
+    </div>
+</div>
+
 {% endblock contenido %}
 
 

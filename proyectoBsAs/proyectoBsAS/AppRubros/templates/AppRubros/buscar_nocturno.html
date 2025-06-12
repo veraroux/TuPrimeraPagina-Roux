@@ -1,21 +1,20 @@
 {% extends 'AppRubros/index.html' %}
+
+
 {% load static %}
 {% block header_style %}
-    style="background-image: url('{% static 'assets/img/gastronomia.jpg' %}');"
+    style="background-image: url('{% static 'assets/img/no.jpg' %}');"
 {% endblock header_style %}
 
-
-
 {% block titulo %}
-<h1>Busqueda de espacios gastronomicos</h1>
+<h1>Busqueda de lugares para ir de noche</h1>
 {% endblock titulo %}
 
 
 {% block contenido %}
     <div class="container mt-5">
-        <h2>Buscar espacio gastronomico</h2>
-       <form method="get" action="{% url 'buscar_gastronomia' %}">
-
+        <h2>Buscar espacios nocturnos</h2>
+        <form method="get" action="{% url 'buscar_nocturno' %}">
             {{ form.as_p }}
             <button type="submit" class="btn btn-primary">Buscar</button>
         </form>

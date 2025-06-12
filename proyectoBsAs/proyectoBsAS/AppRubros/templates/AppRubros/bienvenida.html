@@ -1,7 +1,8 @@
 {% extends 'AppRubros/index.html' %}
 
+
 {% block titulo %}
-<h1 class="mb-5">Bienvenidos a mi página web</h1>
+      <h1> ¡Hola, {{ usuario.first_name|default:usuario.username }}! Nos alegra tenerte aquí.</h1>
 {% endblock titulo %}
 
 {% block contenido %}

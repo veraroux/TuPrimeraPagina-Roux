@@ -1,0 +1,13 @@
+{% extends 'AppRubros/index.html' %}
+
+{% block titulo %}
+<h1 class="mb-5">Cambiar Contraseña</h1>                                
+{% endblock titulo %}
+
+{% block contenido %}   
+<form method="post" action="">
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- <- Aquí se renderiza el formulario -->
+    <button class="btn btn-primary" type="submit">Cambiar</button>
+</form>  
+{% endblock contenido %}

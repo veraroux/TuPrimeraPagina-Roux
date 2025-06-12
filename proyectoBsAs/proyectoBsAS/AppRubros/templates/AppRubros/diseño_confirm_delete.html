@@ -10,16 +10,14 @@
 {% endblock header_style %}
 
 {% block titulo %}
-<h1>Formulario para agregar una nueva casa de diseño</h1>
+<h1 class="mb-4">Eliminar</h1>
 {% endblock titulo %}
 
-
 {% block contenido %}
-<form action="" method="post" enctype="multipart/form-data"> 
+  <h2>¿Estás seguro que querés eliminar "{{ object }}"?</h2>
+  <form method="post">
     {% csrf_token %}
-    <table>
-        {{ form.as_table }}
-    </table>
-    <input type="submit" value="Guardar">
-</form>
+    <button type="submit">Sí, eliminar</button>
+    <a href="{% url 'lista_diseño' %}">Cancelar</a>
+  </form>
 {% endblock contenido %}

@@ -9,3 +9,14 @@
 /clase_8.py
 /pre entregas
 /startbootstrap-landing-page-gh-pages.zip
+
+# Ignorar archivos de caché de Python en cualquier subcarpeta
+__pycache__/
+/**/__pycache__/
+/*.py[cod]
+
+# Ignorar la base de datos SQLite
+db.sqlite3
+
+# Ignorar la carpeta media (por ejemplo, archivos subidos por usuarios)
+media/
